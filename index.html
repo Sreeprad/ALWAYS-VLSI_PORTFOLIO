@@ -6,15 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Always@VLSI-The Club</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.6.0/css/fontawesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-    <section class ="header">
+    
+<section class ="header">
      <!-- <img class="" src="Images/BB.jpg" alt="" /> -->
       <nav>
         <a href="index.html"><img src="Images/VLSI LOGO.png"></a>
-        <div class ="nav-links">
-            <i class="fa fa-times"></i>
+        <div class ="nav-links" id="navLinks">
+            <i class="fa fa-times" onclick="hideMenu()"></i>
             <ul>
                 <li><a href="">HOME</a></li>
                 <li><a href="">ABOUT</a></li>
@@ -23,7 +24,7 @@
                 <li><a href="">CONTACT</a></li>
             </ul>
         </div>
-        <i class="fa fa-bars"></i>
+        <i class="fa fa-bars" onclick="ShowMenu()"></i>
       </nav>
 <div class = "text-box">
     <h1>VERY LARGE SCALE INTEGRATION</h1>
@@ -32,6 +33,66 @@
     <a href="" class="hero-btn">Learn With Us To Explore More</a>
 
 </div>      
-    </section>
+</section>
+
+
+<!---------------------------------Course-------------------------------------->
+
+<section class="courses">
+    <h1>About Always@VLSI</h1>
+    <p>Let's enjoy learning!!</p>
+
+    <div class="scroll-container">
+        <!-- First Row: Left to Right -->
+        <div class="AutoScroll">
+            <div class="scroll-content">
+                <div class="itemLeft"><img src="Images/Club1.jpg" alt="VLSI 1"></div>
+                <div class="itemLeft"><img src="Images/Club2.jpg" alt="VLSI 2"></div>
+                <div class="itemLeft"><img src="Images/Club3.jpg" alt="VLSI 3"></div>
+                <div class="itemLeft"><img src="Images/Club4.jpg" alt="VLSI 4"></div>
+                <!-- Duplicate for Seamless Scroll -->
+                <div class="itemLeft"><img src="Images/Club1.jpg" alt="VLSI 1"></div>
+                <div class="itemLeft"><img src="Images/Club2.jpg" alt="VLSI 2"></div>
+                <div class="itemLeft"><img src="Images/Club3.jpg" alt="VLSI 3"></div>
+                <div class="itemLeft"><img src="Images/Club4.jpg" alt="VLSI 4"></div>
+            </div>
+        </div>
+        
+        <!-- Second Row: Right to Left -->
+        <div class="AutoScroll">
+            <div class="scroll-content">
+                <div class="itemRight"><img src="Images/Club1.jpg" alt="VLSI 5"></div>
+                <div class="itemRight"><img src="Images/Club2.jpg" alt="VLSI 6"></div>
+                <div class="itemRight"><img src="Images/Club3.jpg" alt="VLSI 7"></div>
+                <div class="itemRight"><img src="Images/Club4.jpg" alt="VLSI 8"></div>
+                <!-- Duplicate for Seamless Scroll -->
+                <div class="itemRight"><img src="Images/Club1.jpg" alt="VLSI 5"></div>
+                <div class="itemRight"><img src="Images/Club2.jpg" alt="VLSI 6"></div>
+                <div class="itemRight"><img src="Images/Club3.jpg" alt="VLSI 7"></div>
+                <div class="itemRight"><img src="Images/Club4.jpg" alt="VLSI 8"></div>
+            </div>
+        </div>
+    </div>
+    
+
+</section>
+<script src="script.js"></script>
+
+
+<!-------------JavaScript for Toggle Menu---------->
+
+<script>
+
+    var navLinks = document.getElementById("navLinks");
+
+    function ShowMenu(){
+        navLinks.style.right = "0";
+    }
+    function hideMenu(){
+        navLinks.style.right = "-200px";
+    }
+
+</script>
+
 </body>
 </html>

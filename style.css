@@ -23,7 +23,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url(Images/BB.jpg);
+    background-image: url(Images/BB.png);
     background-position: center;
     background-size: cover;
     opacity: 0.5; /* Adjust this value for transparency */
@@ -31,15 +31,13 @@ body {
 }
 nav{
     display: flex;
-    padding: 1% 6%;
+    padding: 1% 3%;
     justify-content: space-between;
     align-items: center;
 }
 nav img{
     width: 100px;
-    margin: right 10%;;
-    flex:1;
-    text-align:right;
+    margin: right ;
 }
 .nav-links ul li{
     list-style: none;
@@ -97,13 +95,12 @@ nav img{
     background: #f44336;
     transition: 0.5s;
 }
-nav.fa{
+
+nav  .fa{
     display: none;
 }
 
-nav.fa{
-    display:none;
-}
+
 
 @media(max-width: 700px){
     .text-box h1{
@@ -114,22 +111,134 @@ nav.fa{
     }
     .nav-links{
         position: absolute;
-        background: #f44336;
+        background: rgba(255, 255, 255, 0.1); /* Transparent background */
+        backdrop-filter: blur(3px); /* Apply blur effect */
         height: 100vh;
         width: 200px;
         top: 0;
-        right: 0;
+        right: -200px; /* for menu bar*/
         text-align: left;
         z-index: 2;
+        transition: 0.7s;
     }
-    nav.fa{
-        display: block;
-        color: #fff;
-        margin:10px;
+    nav .fa{
+        color: #fff;  /* Icon Settings */
         font-size: 22px;
         cursor:pointer;
+        display: block;
+        margin:10px;    
     }
     .nav-links ul{
         padding: 30px;
     }
+}
+
+
+/*------------------Courses-----------*/
+
+.courses {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #004D73; /* Matching theme */
+    color: white;
+    position: relative;
+}
+
+.courses h1 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.courses p {
+    font-size: 18px;
+    color: yellow;
+    margin-bottom: 20px;
+}
+
+/* Scroll Container */
+/* Scroll Container */
+/* .scroll-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    width: 100%;
+    max-width: 1536px;
+    margin: auto;
+    position: relative;
+} */
+
+.scroll-container {
+    scroll-behavior: smooth;
+    background-color: #00000000;
+    /* position: absolute; */
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+}
+
+/* AutoScroll Wrapper */
+.AutoScroll {
+    display: flex;
+    width: max-content;
+    height: 100px;
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+    position: relative;
+    overflow: hidden;
+    mask-image: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0) 5%,  
+        rgba(0, 0, 0, 1) 25%,  
+        rgba(0, 0, 0, 1) 75%,  
+        rgba(0, 0, 0, 0) 95%   
+    );
+}
+
+/* Inner Wrapper for Continuous Scrolling */
+.scroll-content {
+    display: flex;
+    align-items: center;
+    width: max-content;  /* Ensures smooth looping */
+    animation-timing-function: linear;
+}
+
+/* Continuous Left to Right Animation */
+@keyframes scroll-left {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0); }
+}
+
+/* Apply Left-to-Right Animation */
+.AutoScroll:first-child .scroll-content {
+    animation: scroll-left 30s linear infinite;
+}
+
+/* Continuous Right to Left Animation - FIXED */
+@keyframes scroll-right {
+    from { transform: translateX(100%); }  /* Start from right edge */
+    to { transform: translateX(-100%); }  /* Move completely to left */
+}
+
+/* Apply Right-to-Left Animation */
+.AutoScroll:last-child .scroll-content {
+    animation: scroll-right 50s linear infinite;
+}
+
+/* Image Containers */
+.itemLeft, .itemRight {
+    min-width: 200px;
+    height: 100px;
+    border-radius: 10px;
+    flex-shrink: 0;
+    margin: 0 10px;
+}
+
+/* Image Styling */
+.itemLeft img, .itemRight img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: cover;
 }
